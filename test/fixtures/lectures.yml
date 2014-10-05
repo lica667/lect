@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  lector_id: 1
+  subject: MyString
+  semester: 1
+  topic: MyString
+  section: MyString
+
+two:
+  lector_id: 1
+  subject: MyString
+  semester: 1
+  topic: MyString
+  section: MyString
