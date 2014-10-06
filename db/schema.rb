@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005213516) do
+ActiveRecord::Schema.define(version: 20141005215157) do
+
+  create_table "comments", force: true do |t|
+    t.string   "comment"
+    t.integer  "student_id"
+    t.integer  "paragraph_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "lecturers", force: true do |t|
     t.string   "name"
@@ -39,6 +47,14 @@ ActiveRecord::Schema.define(version: 20141005213516) do
     t.integer  "semester"
     t.string   "topic"
     t.string   "section"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "paragraphs", force: true do |t|
+    t.string   "text"
+    t.integer  "lecture_id"
+    t.integer  "rank"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
