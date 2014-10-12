@@ -1,4 +1,7 @@
 Lect::Application.routes.draw do
+  get "lecturer/index"
+  get "student/index"
+  root to: "student#index"
   devise_for :students
   devise_for :lecturers
   # The priority is based upon order of creation: first created -> highest priority.

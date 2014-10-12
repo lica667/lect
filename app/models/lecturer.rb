@@ -4,5 +4,5 @@ class Lecturer < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :lecture
+  has_many :lectures
 end
