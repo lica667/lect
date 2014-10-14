@@ -4,6 +4,7 @@ class LectureController < ApplicationController
   end
 
   def show
+    @lecture = Lecture.find(params[:id])
   end
 
   def edit

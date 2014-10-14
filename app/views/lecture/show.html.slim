@@ -1,2 +1,3 @@
-h1 Lecture#show
-p Find me in app/views/lecture/show.html.slim
+h1= @lecture.topic
+-@lecture.paragraphs.each do |p|
+	p= p.text
