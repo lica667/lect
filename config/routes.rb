@@ -1,9 +1,10 @@
 Lect::Application.routes.draw do
-  get "lecturer/index"
   get "student/index"
   root to: "student#index"
   devise_for :students
   devise_for :lecturers
+  resources :lecture
+  get 'lectures/:subject_id', to: "lecture#index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

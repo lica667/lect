@@ -1,0 +1,8 @@
+h1 =@lectures.first.subject.name
+-@lectures.each do |l|
+	div.paragraph
+		p.text-info =l.section
+		p.lead= link_to l.topic, lecture_path(l)
+		em =l.lecturer.name
+		blockquote
+			p =l.paragraphs.first.text

@@ -5,4 +5,7 @@ class Lecturer < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :lectures
+  has_many :subject_lecturers
+  has_many :subjects, through: :subject_lecturers
+  accepts_nested_attributes_for :subjects, :allow_destroy => true
 end

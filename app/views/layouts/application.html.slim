@@ -29,11 +29,11 @@ html lang="en"
             span.icon-bar
             span.icon-bar
           a.brand href="#"Lect
-          .container.nav-collapse
-            ul.nav
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+          / .container.nav-collapse
+          /   ul.nav
+          /     li= link_to "Link 1", "/path1"
+          /     li= link_to "Link 2", "/path2"
+          /     li= link_to "Link 3", "/path3"
 
     .container
 
@@ -43,12 +43,11 @@ html lang="en"
           = yield
         .span3
           .well.sidebar-nav
-            h3 Sidebar
+            h3 Subjects
             ul.nav.nav-list
-              li.nav-header Sidebar
-              li= link_to "Link 1", "/path1"
-              li= link_to "Link 2", "/path2"
-              li= link_to "Link 3", "/path3"
+              li.nav
+              -current_student.subjects.each do |s|
+                li= link_to "#{s.name}", "/lecture?subject=#{s.id}"
     
       footer
         p &copy; Company 2014

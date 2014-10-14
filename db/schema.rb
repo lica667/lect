@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141012230143) do
+ActiveRecord::Schema.define(version: 20141014204145) do
 
   create_table "comments", force: true do |t|
     t.string   "comment"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20141012230143) do
   add_index "lecturers", ["reset_password_token"], name: "index_lecturers_on_reset_password_token", unique: true
 
   create_table "lectures", force: true do |t|
-    t.integer  "lector_id"
+    t.integer  "lecturer_id"
     t.integer  "semester"
     t.string   "topic"
     t.string   "section"
@@ -79,8 +79,21 @@ ActiveRecord::Schema.define(version: 20141012230143) do
   add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true
 
   create_table "subject_lecturers", force: true do |t|
-    t.integer  "subject_is"
+    t.integer  "subject_id"
     t.integer  "lecturer_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subject_students", force: true do |t|
+    t.integer  "subject_id"
+    t.integer  "student_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "subjects", force: true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

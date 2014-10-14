@@ -5,4 +5,7 @@ class Student < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :comments
+  has_many :subject_students
+  has_many :subjects, through: :subject_students
+  accepts_nested_attributes_for :subjects, :allow_destroy => true
 end
