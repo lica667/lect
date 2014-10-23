@@ -1,3 +1,5 @@
-h1= @lecture.topic
--@lecture.paragraphs.each do |p|
-	p= p.text
+div.note
+	h1= @lecture.topic
+	-@lecture.paragraphs.each do |p|
+		p= p.text
+	
